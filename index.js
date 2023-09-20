@@ -140,6 +140,21 @@ class linkedList {
     this.head = previous
   }
 
+  reverseListStack() {
+    let stack = []
+    let tmp = this.head
+    while (tmp.next) {
+      stack.push(tmp)
+      tmp = tmp.next
+    }
+    this.head = tmp
+    while (stack.length !== 0) {
+      tmp.next = stack.pop()
+      tmp = tmp.next
+    }
+    tmp.next = null
+  }
+
   printData() {
     let tmp = this.head
     while (tmp) {
